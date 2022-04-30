@@ -3,10 +3,10 @@
     <template #header>
       <div class="flex justify-between w-full">
         <!-- TITLE OF HEADER -->
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">Administración de Clientes</h2>
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">Modulo de Estudiantes</h2>
 
         <!-- BUTTON FOR ADD CUSTOMER -->
-        <link-button :href="route('customer.create')"> Registrar Cliente </link-button>
+        <link-button :href="route('customer.create')"> Registrar Estudiante </link-button>
       </div>
     </template>
 
@@ -18,7 +18,7 @@
           <div class="relative col-span-4 lg:col-span-1 pt-4 px-2 pb-2 border border-gray-400 rounded-md">
             <custom-label
               for="customerName"
-              value="Nombre del Cliente"
+              value="Nombre del estudiante"
               class="absolute top-0 left-4 p-1 bg-white text-sm text-gray-400 transform -translate-y-1/2"
             />
             <jet-input
@@ -63,7 +63,7 @@
           </div>
 
           <!-- Buscar por Bank Account -->
-          <div class="hidden lg:block relative pt-4 px-2 pb-2 border border-gray-400 rounded-md">
+          <div class="hidden relative pt-4 px-2 pb-2 border border-gray-400 rounded-md">
             <custom-label
               for="searchByBankAccount"
               value="Numero de cuenta"
@@ -83,13 +83,13 @@
             <!-- Filtro por actividad -->
             <label class="flex items-center mr-3 hover:cursor-pointer">
               <jet-checkbox class="mr-2" v-model:checked="filterByActivity" />
-              <span>Clientes Activos</span>
+              <span>Estudiantes Activos</span>
             </label>
 
             <!-- Filtro por saldo -->
             <label class="flex items-center hover:cursor-pointer mr-3">
               <jet-checkbox class="mr-2" v-model:checked="filterByBalance" />
-              <span>Clientes con Saldo</span>
+              <span>Estudiantes con Saldo</span>
             </label>
 
             <!-- Filtrar por valor -->

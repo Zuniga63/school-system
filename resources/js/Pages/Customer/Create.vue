@@ -1,10 +1,10 @@
 <template>
-  <app-layout title="Nuevo Cliente">
+  <app-layout title="Nuevo Estudiante">
     <template #header>
       <div class="flex justify-between">
         <!-- TITLE OF HEADER -->
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-          Registrar Cliente
+          Registrar Estudiante
         </h2>
 
         <!-- BUTTON FOR ADD CUSTOMER -->
