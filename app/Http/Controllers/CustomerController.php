@@ -25,8 +25,8 @@ class CustomerController extends Controller
    */
   public function index()
   {
-    $customers = Customer::orderBy('first_name')
-      ->orderBy('last_name')
+    $customers = Customer::orderBy('last_name')
+      ->orderBy('first_name')
       ->with([
         'information',
         'contacts',
