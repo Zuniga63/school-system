@@ -21,5 +21,11 @@ class BusinessConfigSeeder extends Seeder
       'created_at' => $now,
       'updated_at' => $now
     ]);
+
+    DB::table('cashbox')->insert([
+      'id' => 1,
+      'name' => "Caja Principal",
+      'slug' => "caja_principal",
+    ]);
   }
 }
