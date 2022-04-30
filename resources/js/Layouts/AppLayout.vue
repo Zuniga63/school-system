@@ -236,14 +236,6 @@
                       Configuración
                     </jet-dropdown-link>
 
-                    <div class="block px-4 py-2 text-xs text-gray-400">
-                      Miscelaneos
-                    </div>
-
-                    <jet-dropdown-link :href="route('dailyActivity.index')">
-                      Actividades
-                    </jet-dropdown-link>
-
                     <div class="border-t border-gray-100"></div>
 
                     <!-- Authentication -->
@@ -502,7 +494,7 @@ export default {
       navLinks: [
         { id: 1, name: "Panel", routeName: "dashboard" },
         { id: 2, name: "Cajas", routeName: "cashbox.index" },
-        { id: 3, name: "Clientes", routeName: "customer.index" },
+        { id: 3, name: "Estudiantes", routeName: "customer.index" },
         { id: 4, name: "Facturación", routeName: "invoice.index" },
       ],
     };

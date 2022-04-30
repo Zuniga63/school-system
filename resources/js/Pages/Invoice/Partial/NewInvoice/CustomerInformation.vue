@@ -1,31 +1,15 @@
 <template>
-  <div
-    class="
-      grid grid-cols-6
-      gap-2
-      items-center
-      h-full
-      p-3
-      border border-gray-200
-      rounded-md
-      bg-gray-50
-      shadow
-    "
-  >
+  <div class="grid grid-cols-6 gap-2 items-center h-full p-3 border border-gray-200 rounded-md bg-gray-50 shadow">
     <!-- Name -->
     <div class="col-span-4">
       <div class="flex items-center">
-        <custom-label
-          for="customer-name"
-          class="mr-2 text-sm text-gray-800"
-          value="Cliente"
-        />
+        <custom-label for="customer-name" class="mr-2 text-sm text-gray-800" value="Estudiante" />
         <div class="flex-grow w-full">
           <customer-list
             name="customer-name"
             id="customer-name"
             class="px-4 py-2 text-xs text-gray-800"
-            placeholder="Selecciona un cliente."
+            placeholder="Escribelo aquí."
             :customers="customers"
             v-model="customer.fullName"
             @select-customer="customerSelected"
@@ -40,11 +24,10 @@
     <!-- Nit -->
     <div class="col-span-2">
       <div class="flex items-center">
-        <custom-label
-          for="customer-nit"
-          class="mr-2 text-sm text-gray-800 tracking-wider"
-          >Nit</custom-label
-        >
+        <custom-label for="customer-nit" class="mr-2 text-sm text-gray-800 tracking-wider">
+          <span v-if="customerSelected"> {{ customerSelected.document_type }} </span>
+          <span v-else>Nit</span>
+        </custom-label>
         <div class="flex-grow w-full">
           <jet-input
             type="text"
@@ -55,10 +38,7 @@
             v-model="customer.nit"
             :disabled="customer.customer ? true : false"
           />
-          <input-error
-            :message="errors.customerDocument"
-            class="mt-1 text-xs"
-          />
+          <input-error :message="errors.customerDocument" class="mt-1 text-xs" />
         </div>
       </div>
     </div>
@@ -66,11 +46,7 @@
     <!-- Address -->
     <div class="col-span-4">
       <div class="flex items-center">
-        <custom-label
-          for="customer-address"
-          class="mr-2 text-sm text-gray-800"
-          >Dirección</custom-label
-        >
+        <custom-label for="customer-address" class="mr-2 text-sm text-gray-800">Dirección</custom-label>
         <div class="flex-grow w-full">
           <jet-input
             type="text"
@@ -88,9 +64,7 @@
     <!-- Phone -->
     <div class="col-span-2">
       <div class="flex items-center">
-        <custom-label for="customer-phone" class="mr-2 text-sm text-gray-800"
-          >Telefono</custom-label
-        >
+        <custom-label for="customer-phone" class="mr-2 text-sm text-gray-800">Telefono</custom-label>
         <div class="flex-grow w-full">
           <jet-input
             type="text"
@@ -130,9 +104,7 @@ export default {
       this.customer.customer = customer;
       this.customer.nit = customer.document_number;
       this.customer.phone =
-        customer.contacts && customer.contacts.length > 0
-          ? (this.customer.phone = customer.contacts[0].number)
-          : null;
+        customer.contacts && customer.contacts.length > 0 ? (this.customer.phone = customer.contacts[0].number) : null;
     },
     /**
      * Resetea los valores de los campos cuando se

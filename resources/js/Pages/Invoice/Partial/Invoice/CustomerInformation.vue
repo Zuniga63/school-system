@@ -3,7 +3,7 @@
     <!-- Nombre del cliente -->
     <div class="col-span-2">
       <div class="flex">
-        <p class="mr-2 text-gray-800">Cliente:</p>
+        <p class="mr-2 text-gray-800">Estudiante:</p>
         <p class="w-full border-b border-gray-800 text-center text-gray-800 uppercase">
           {{ invoice.customer_name }}
         </p>
