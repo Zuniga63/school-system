@@ -120,7 +120,7 @@
                 </th>
                 <!-- Imagen. nombre y documento -->
                 <th scope="col" class="px-6 py-3 text-left text-gray-500 tracking-wider uppercase">
-                  Nombres y Apellidos
+                  Estudiante
                 </th>
 
                 <!-- Contacto -->
@@ -159,19 +159,20 @@
                 <td class="px-3 py-2 text-gray-800 text-xs lg:text-base">
                   <div class="flex">
                     <!-- Customer Image -->
-                    <div class="hidden lg:block w-16 h-16 p-2 mr-2">
+                    <!-- <div class="hidden lg:block w-16 h-16 p-2 mr-2">
                       <img
                         :src="customer.image_url"
                         :alt="customer.full_name"
                         class="w-full rounded-full"
                         loading="lazy"
                       />
-                    </div>
-                    <!-- Nombre y correo -->
-                    <div class="flex flex-col justify-center">
-                      <span class="capitalize block max-w-[10rem] xl:max-w-[18rem]">{{ customer.full_name }}</span>
+                    </div> -->
+                    <!-- Nombre e identificación -->
+                    <div class="flex flex-col justify-center flex-grow">
+                      <span class="capitalize block max-w-[10rem] xl:max-w-[18rem]">{{ customer.full_name_inverted }}</span>
+                      <!-- <span class="capitalize block max-w-[10rem] xl:max-w-[18rem]">{{ customer.first_name}}</span> -->
                       <!-- Documento -->
-                      <span v-if="customer.document_number" class="hidden lg:block tracking-widest text-sm">
+                      <span v-if="customer.document_number" class="hidden lg:block tracking-widest text-xs">
                         <span class="text-gray-400">{{ customer.document_type }}: </span>
                         <span @click="selectText">
                           {{ formatDocument(customer.document_number) }}

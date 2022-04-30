@@ -25,8 +25,8 @@ class CustomerController extends Controller
    */
   public function index()
   {
-    $customers = Customer::orderBy('first_name')
-      ->orderBy('last_name')
+    $customers = Customer::orderBy('last_name')
+      ->orderBy('first_name')
       ->with([
         'information',
         'contacts',
@@ -123,8 +123,7 @@ class CustomerController extends Controller
     $customer->load([
       'invoices' => function ($query) {
         $query->where('cancel', 0)
-          ->orderBy('expedition_date')
-          ->without('items');
+          ->orderBy('expedition_date');
       },
       'invoicePayments' => function ($query) {
         $query->where('cancel', 0)

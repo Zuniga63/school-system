@@ -33,7 +33,7 @@ class Customer extends Model
   //------------------------------------------------------------
   // SETERS AND GETTERS
   //------------------------------------------------------------
-  protected $appends = ['full_name', 'image_url'];
+  protected $appends = ['full_name', 'image_url', 'full_name_inverted'];
 
   /**
    * Retorna el nombre completo del cliente
@@ -41,6 +41,12 @@ class Customer extends Model
   public function getFullNameAttribute()
   {
     $fullName = "$this->first_name $this->last_name";
+    return trim($fullName);
+  }
+
+  public function getFullNameInvertedAttribute()
+  {
+    $fullName = "$this->last_name $this->first_name";
     return trim($fullName);
   }
 
